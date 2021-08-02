@@ -88,10 +88,6 @@ fi
 
 mcount "version.python.${PYTHON_VERSION}"
 
-if [[ "$PYTHON_VERSION" == "python-3.9.6" ]]; then
-  VENDORED_PYTHON="https://reforge-docker-images.s3.amazonaws.com/heroku/python-buildpacks/runtimes/python-3.8.1.tar.gz"
-fi
-
 if [[ "$STACK" != "$CACHED_PYTHON_STACK" ]]; then
     puts-step "Stack has changed from $CACHED_PYTHON_STACK to $STACK, clearing cache"
     rm -rf .heroku/python-stack .heroku/python-version .heroku/python .heroku/vendor .heroku/python .heroku/python-sqlite3-version
